@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>sidebar-menu</title>
+</head>
+<body>
+  <nav class="navigation">
+    <ul>
+      <li class="list active">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <span class="icon"><i data-feather="home"></i></span>
+          <span class="title">Home</span>
+        </a>
+      </li>
+      <li class="list">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <span class="icon"><i data-feather="user"></i></span>
+          <span class="title">Profile</span>
+        </a>
+      </li>
+      <li class="list">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <span class="icon"><i data-feather="message-circle"></i></span>
+          <span class="title">Messages</span>
+        </a>
+      </li>
+      <li class="list">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <span class="icon"><i data-feather="settings"></i></span>
+          <span class="title">Settings</span>
+        </a>
+      </li>
+      <li class="list">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <span class="icon"><i data-feather="help-circle"></i></span>
+          <span class="title">Help</span>
+        </a>
+      </li>
+      <li class="list">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <span class="icon"><i data-feather="lock"></i></span>
+          <span class="title">Password</span>
+        </a>
+      </li>
+      <li class="list">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <span class="icon"><i data-feather="log-out"></i></span>
+          <span class="title">Sign Out</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="toggle">
+    <span class="open" ><i data-feather="menu"></i></span>
+    <span class="close" ><i data-feather="x"></i></span>
+  </div>
+  <!-- Librari for icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
+  <!-- Function of change the class 'active'  -->
+  <script>
+
+    let menuToggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    menuToggle.onclick = () => {
+      menuToggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+    }
+
+    let list = document.querySelectorAll('.list');
+    for (const item of list) {
+      item.onclick = () => {
+        let j = 0;
+        while (j < list.length) {
+          list[j++].className = 'list';
+        }
+        item.className = 'list active';
+      }
+    }
+  </script>
+</body>
+</html>
