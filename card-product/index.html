@@ -4,14 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleCard.css">
+  <link rel="stylesheet" href="styleNav.css">
   <title>Product Card</title>
 </head>
 <body>
-  <div class="container">
+  <header class="header" id="header">
+    <a href="#" class="header__logo">Logo</a>
+    <div class="header__toggle"></div>
+    <nav class="header__navbar">
+      <ul class="header__items">
+        <li><a class="header__item" href="#">Home</a></li>
+        <li><a class="header__item" href="#">Products</a></li>
+        <li><a class="header__item" href="#">Cart</a></li>
+        <li><a class="header__item" href="#">Sign in</a></li>
+        <li><a class="header__item" href="#">Sign out</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- init container -->
+  <main class="container">
     <div class="card">
       <div class="img-box">
-        <img src="bike.webp" alt="product">
+        <img src="assets/bike.webp" alt="product">
         <ul class="action">
           <li>
             <i data-feather="heart"></i>
@@ -45,7 +60,7 @@
     </div>
     <div class="card">
       <div class="img-box">
-        <img src="camera.webp" alt="product">
+        <img src="assets/camera.webp" alt="product">
         <ul class="action">
           <li>
             <i data-feather="heart"></i>
@@ -79,7 +94,7 @@
     </div>
     <div class="card">
       <div class="img-box">
-        <img src="headset.webp" alt="product">
+        <img src="assets/headset.webp" alt="product">
         <ul class="action">
           <li>
             <i data-feather="heart"></i>
@@ -113,7 +128,7 @@
     </div>
     <div class="card">
       <div class="img-box">
-        <img src="whatch-white.webp" alt="product">
+        <img src="assets/whatch-white.webp" alt="product">
         <ul class="action">
           <li>
             <i data-feather="heart"></i>
@@ -147,7 +162,7 @@
     </div>
     <div class="card">
       <div class="img-box">
-        <img src="shoes-deport.webp" alt="product">
+        <img src="assets/shoes-deport.webp" alt="product">
         <ul class="action">
           <li>
             <i data-feather="heart"></i>
@@ -181,7 +196,7 @@
     </div>
     <div class="card">
       <div class="img-box">
-        <img src="shoes.webp" alt="product">
+        <img src="assets/shoes.webp" alt="product">
         <ul class="action">
           <li>
             <i data-feather="heart"></i>
@@ -213,12 +228,20 @@
         </div>
       </div>
     </div>  
-  </div>
-
-  <!-- Librari for icons -->
+  </main>
+  <!-- Library for icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script>
     feather.replace()
+  </script>
+  <!-- Script from navbar -->
+  <script>
+    const toggle = document.querySelector('.header__toggle');
+    const navbar = document.querySelector('.header__navbar');
+    toggle.onclick = () => {
+      toggle.classList.toggle('header__toggle--active');
+      navbar.classList.toggle('header__navbar--active');
+    }
   </script>
 </body>
 </html>
