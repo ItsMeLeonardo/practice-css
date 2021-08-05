@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;0,800;0,900;1,400&display=swap');
+
+:root {
+  /* ===== colors ===== */
+  --first-color: #1a73e8;
+  --input-color: #808688;
+  --border-color: #dadce0;
+
+  /* ===== Font and typography ===== */
+  --body-font: 'Nunito', sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.75rem;
+}
+*,::before,::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+}
+/* ==== GENERAL ==== */
+body {
+  font-size: var(--normal-font-size);
+}
+/* ==== FORM ==== */
+.form-container {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 100vh;
+}
+.form {
+  width: 360px;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 .8rem 2rem rgba(92,99,105,.1);
+}
+.form__title {
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+.form__field {
+  position: relative;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
+.form__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: var(--normal-font-size);
+  border: 1px solid var(--border-color);
+  border-radius:.5rem;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
+.form__label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0 .25rem;
+  background: #fff;
+  color: var(--input-color);
+  font-size: var(--normal-font-size);
+  transition: all .4s;
+}
+.form__button {
+  display: block;
+  margin-left: auto;
+  padding: .75rem 2rem;
+  outline: none;
+  border: none;
+  background: var(--first-color);
+  color: #fff;
+  font-size: var(--normal-font-size);
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: all .4s;
+  font-weight: 800;
+}
+.form__button:hover {
+  box-shadow:0 10px 36px rgba(0,0,0,.15);
+}
+/* ==== input focus effect ====*/
+.form__input:focus + .form__label {
+  top: -.5rem;
+  left: 0.8rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: 400;
+  z-index: 1;
+}
+/* ==== for the label is fixed in top ==== */
+.form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label{
+  top: -.5rem;
+  left: 0.8rem;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  z-index: 1;
+}
+/* ==== for border of input ;) ==== */
+.form__input:focus {
+  border: 2px solid var(--first-color);
+}
