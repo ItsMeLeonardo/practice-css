@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Oswald&display=swap");
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+
+:root {
+  --gray: #949494;
+  --bg-card: #fafafb;
+  --bg: rgba(250, 250, 251, 0.7);
+  --black: #302f32;
+  --primary: #c24a71;
+  --max-w: 1200px;
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 1rem;
+  font-weight: normal;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffb7b7, #727272),
+    radial-gradient(60.91% 100% at 50% 0, #ffd1d1 0, #260000 100%),
+    linear-gradient(247.95deg, #fdd, #720066),
+    linear-gradient(117.03deg, #0ff, #f44),
+    radial-gradient(100.22% 100% at 70.57% 0, red 0, #00ffe0 100%),
+    linear-gradient(117.03deg, #b7d500, #30f);
+  background-blend-mode: screen, overlay, hard-light, color-burn, color-dodge,
+    normal;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0.5rem;
+  background: var(--bg);
+  backdrop-filter: blur(96px);
+}
+
+/* Title */
+.Title-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 10%;
+}
+
+.Title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02rem;
+  color: black;
+}
+
+.Title-date {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gray);
+}
+
+.Title-number {
+  font-size: 2.25rem;
+  font-weight: 300;
+}
+
+.Title-month {
+  font-size: 0.85rem;
+}
+
+/* ==== rank list ==== */
+.Rank-content {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.Rank-list {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.Rank-item {
+  height: 80%;
+  min-width: 200px;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--bg-card);
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.Card-header {
+  width: 100%;
+  position: relative;
+  margin-top: 1rem;
+}
+.Card-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1.5rem;
+  height: 0.25rem;
+  background: var(--primary);
+}
+.Card-header h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gray);
+}
+
+.Card-body,
+.Card-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.Card-body {
+  gap: 0.5rem;
+}
+.Card-title h2 {
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+.Card-body span {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--gray);
+}
+.Card-img {
+  border-radius: 0.75rem;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+.Card-img img {
+  aspect-ratio: 1/1;
+}
+.Card-footer {
+  width: 100%;
+}
+.Card-options {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.Card-option {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background 0.25s ease-in-out;
+}
+.Card-option:hover {
+  background: var(--primary);
+}
+.Card-option:hover *::before {
+  color: var(--bg-card);
+}
+.Card-option * {
+  display: flex;
+}
+/* swiper */
+.swiper-wrapper {
+  gap: 0;
+  display: flex;
+  align-items: center;
+}
+.swiper-scrollbar {
+  max-width: 20%;
+}
+.swiper-pagination {
+  max-width: 200px;
+  top: 95% !important;
+  left: calc(100% - 200px) !important;
+}
+.swiper-pagination .swiper-pagination-progressbar-fill {
+  background: var(--primary);
+  box-shadow: 0.5rem 0.5rem 2rem var(--primary);
+}
+
+@media screen and (min-width: 1020px) {
+  .container {
+    padding: 1rem 2rem;
+  }
+}
